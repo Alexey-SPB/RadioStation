@@ -1,72 +1,94 @@
 public class Radio {
-    private int Station;
-    private int Volume;
+    public int allStations = 10;
+    public int firstStations = 0;
+    public int lastStations = 9;
+    private int station;
+    private int maxVolume = 100;
+    private int minVolume = 0;
+    private int volume;
+
+    public Radio() {
+
+    }
+
+    public Radio(int allStations) {
+        this.allStations = allStations;
+        this.lastStations = allStations - 1;
+    }
+
+    public int getFirstStations() {
+        return firstStations;
+    }
+
+    public int getLastStations() {
+        return lastStations;
+    }
 
     public int getStation() {
-        return Station;
+        return station;
     }
 
     public void setStation(int station) {
-        if (station < 0) {
+        if (station < firstStations) {
             return;
         }
-        if (station > 9) {
+        if (station > lastStations) {
             return;
         }
-        this.Station = station;
+        this.station = station;
     }
 
     public int getVolume() {
-        return Volume;
+        return volume;
     }
 
     public void setVolume(int volume) {
-        if (volume < 0) {
-            volume = 0;
+        if (volume < minVolume) {
+            volume = minVolume;
         }
         ;
-        if (volume > 100) {
-            volume = 100;
+        if (volume > maxVolume) {
+            volume = maxVolume;
         }
 
-        this.Volume = volume;
+        this.volume = volume;
 
     }
 
     public void next() {
-        if (Station != 9) {
-            Station++;
+        if (station != lastStations) {
+            station++;
             return;
         } else {
-            Station = 0;
+            station = firstStations;
         }
     }
 
     public void prev() {
-        if (Station != 0) {
-            Station--;
+        if (station != firstStations) {
+            station--;
             return;
         } else {
-            Station = 9;
+            station = lastStations;
         }
     }
 
-    public void VolumeUp() {
-        if (Volume < 100) {
-            Volume++;
+    public void volumeUp() {
+        if (volume < maxVolume) {
+            volume++;
             return;
         } else {
-            Volume = 100;
+            volume = maxVolume;
         }
 
     }
 
-    public void VolumeDown() {
-        if (Volume != 0) {
-            Volume--;
+    public void volumeDown() {
+        if (volume != minVolume) {
+            volume--;
             return;
         } else {
-            Volume = 0;
+            volume = minVolume;
         }
     }
 }
