@@ -111,28 +111,28 @@ public class RadioTest {
     @Test
     public void testVolumeUp() {
         radio.setVolume(70);
-        radio.VolumeUp();
+        radio.volumeUp();
         Assertions.assertEquals(71, radio.getVolume());
     }
 
     @Test
     public void testVolumeDown() {
         radio.setVolume(50);
-        radio.VolumeDown();
+        radio.volumeDown();
         Assertions.assertEquals(49, radio.getVolume());
     }
 
     @Test
     public void testVolumeUpBorder() {
         radio.setVolume(101);
-        radio.VolumeUp();
+        radio.volumeUp();
         Assertions.assertEquals(100, radio.getVolume());
     }
 
     @Test
     public void testVolumeDownBorder() {
         radio.setVolume(-1);
-        radio.VolumeDown();
+        radio.volumeDown();
         Assertions.assertEquals(0, radio.getVolume());
     }
 

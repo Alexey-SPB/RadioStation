@@ -2,10 +2,10 @@ public class Radio {
     public int allStations = 10;
     public int firstStations = 0;
     public int lastStations = 9;
-    private int Station;
+    private int station;
     private int maxVolume = 100;
     private int minVolume = 0;
-    private int Volume;
+    private int volume;
 
     public Radio() {
 
@@ -25,7 +25,7 @@ public class Radio {
     }
 
     public int getStation() {
-        return Station;
+        return station;
     }
 
     public void setStation(int station) {
@@ -35,11 +35,11 @@ public class Radio {
         if (station > lastStations) {
             return;
         }
-        this.Station = station;
+        this.station = station;
     }
 
     public int getVolume() {
-        return Volume;
+        return volume;
     }
 
     public void setVolume(int volume) {
@@ -51,44 +51,44 @@ public class Radio {
             volume = maxVolume;
         }
 
-        this.Volume = volume;
+        this.volume = volume;
 
     }
 
     public void next() {
-        if (Station != lastStations) {
-            Station++;
+        if (station != lastStations) {
+            station++;
             return;
         } else {
-            Station = firstStations;
+            station = firstStations;
         }
     }
 
     public void prev() {
-        if (Station != firstStations) {
-            Station--;
+        if (station != firstStations) {
+            station--;
             return;
         } else {
-            Station = lastStations;
+            station = lastStations;
         }
     }
 
-    public void VolumeUp() {
-        if (Volume < maxVolume) {
-            Volume++;
+    public void volumeUp() {
+        if (volume < maxVolume) {
+            volume++;
             return;
         } else {
-            Volume = maxVolume;
+            volume = maxVolume;
         }
 
     }
 
-    public void VolumeDown() {
-        if (Volume != minVolume) {
-            Volume--;
+    public void volumeDown() {
+        if (volume != minVolume) {
+            volume--;
             return;
         } else {
-            Volume = minVolume;
+            volume = minVolume;
         }
     }
 }
