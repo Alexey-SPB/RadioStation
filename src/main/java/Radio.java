@@ -1,9 +1,9 @@
 public class Radio {
-    private int Station;
-    private int Volume;
+    private int station;
+    private int volume;
 
     public int getStation() {
-        return Station;
+        return station;
     }
 
     public void setStation(int station) {
@@ -13,11 +13,11 @@ public class Radio {
         if (station > 9) {
             return;
         }
-        this.Station = station;
+        this.station = station;
     }
 
     public int getVolume() {
-        return Volume;
+        return volume;
     }
 
     public void setVolume(int volume) {
@@ -29,44 +29,44 @@ public class Radio {
             volume = 100;
         }
 
-        this.Volume = volume;
+        this.volume = volume;
 
     }
 
     public void next() {
-        if (Station != 9) {
-            Station++;
+        if (station != 9) {
+            station++;
             return;
         } else {
-            Station = 0;
+            station = 0;
         }
     }
 
     public void prev() {
-        if (Station != 0) {
-            Station--;
+        if (station != 0) {
+            station--;
             return;
         } else {
-            Station = 9;
+            station = 9;
         }
     }
 
     public void VolumeUp() {
-        if (Volume < 100) {
-            Volume++;
+        if (volume < 100) {
+            volume++;
             return;
         } else {
-            Volume = 100;
+            volume = 100;
         }
 
     }
 
     public void VolumeDown() {
-        if (Volume != 0) {
-            Volume--;
+        if (volume != 0) {
+            volume--;
             return;
         } else {
-            Volume = 0;
+            volume = 0;
         }
     }
 }
